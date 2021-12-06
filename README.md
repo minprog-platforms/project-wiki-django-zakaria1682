@@ -2,7 +2,7 @@
 Wikipedia is a free online encyclopedia that consists of a number of encyclopedia entries on various topics.
 This websites will be a small wiki webpage with some information regarding some components on webbuilding.  
 
-![sketch of the homepage](/encyclopdia/images/image1.jpg)
+![sketch of the homepage](/project_wiki/encyclopedia/images/image1.jpg)
 
 ## Getting Started
 
