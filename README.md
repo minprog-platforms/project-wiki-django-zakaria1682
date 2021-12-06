@@ -4,6 +4,18 @@ This websites will be a small wiki webpage with some information regarding some 
 
 ![sketch of the homepage](https://github.com/minprog-platforms/project-wiki-django-zakaria1682/blob/main/images/image1.jpg) 
 
+
+![sketch of the homepage](https://github.com/minprog-platforms/project-wiki-django-zakaria1682/blob/main/images/image2.jpg) 
+
+
+![sketch of the homepage](https://github.com/minprog-platforms/project-wiki-django-zakaria1682/blob/main/images/image3.jpg) 
+
+
+
+
+
+
+
 ## Getting Started
 
 TODO: Describe steps to install requirements and get the application running.
