@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>{{Django|slice:"0:10"}}</h1>
+    
+
+    <br>
+
+    {{ Django|slice:"10:" }}
+
+
+{% endblock %}
