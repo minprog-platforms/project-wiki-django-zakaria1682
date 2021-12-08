@@ -1,43 +1,55 @@
-from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
+
 
 from . import util
 
- 
+from django import forms
+
+class NameForm(forms.Form):
+    title = forms.CharField(label='title')
+    content = forms.CharField(label='content')
+
+
 def index(request):
-    return render(request, "encyclopedia/index.html", {
+    return render(request, "encyclopedia/wiki.html", {
         "entries": util.list_entries(),
     })
 
-def css(request):
-    return render(request, "encyclopedia/css.html", {
-        "CSS": util.get_entry("CSS")
+
+
+def entry(request, title):
+    return render(request, "encyclopedia/all.html", {
+        "entry": util.get_entry(title),
+    })
+
+
+
+def search(request):
+    input = request.GET.get('search')
+    if input in util.list_entries():   
+        return render(request, 'encyclopedia/search.html', {
+            "Entry": util.get_entry(input),
+        }) 
+    else:
+        return redirect('/wiki')
+         
+
+
+
+def create(request):
+    if request.method == 'POST':
+        form =NameForm(request.POST)
+        if form.is_valid():
+            title = form.cleaned_data['title']
+            content = form.cleaned_data['content']
+
+            util.save_entry(title, content)
+            return redirect("entry", title)
+
+    return render(request, "encyclopedia/create.html", {
+        "form": NameForm()
+    })
         
-    })
-
-def django(request):
-    return render(request, "encyclopedia/django.html", {
-        "Django": util.get_entry("Django"),
-    })
 
 
-def git(request):
-    return render(request, "encyclopedia/git.html", {
-        "Git": util.get_entry("Git"),
-    })
-
-
-def html(request):
-    return render(request, "encyclopedia/html.html", {
-        "HTML": util.get_entry("HTML"),
-    })
-
-
-def python(request):
-    return render(request, "encyclopedia/python.html", {
-        "Python": util.get_entry("Python"),
-    })
-
-
-
-    
-        

@@ -36,6 +36,3 @@ def get_entry(title):
     except FileNotFoundError:
         return None
 
-def list1():
-    list1 = [1, 2] 
-    return list1
